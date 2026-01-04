@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MadeiraGO - Marketplace Turístico Completo. Explore, planeje e reserve atividades na Madeira">
+    <meta name="theme-color" content="#007bff">
+    <title>MadeiraGO - Marketplace Turístico Completo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Checkbox para tema -->
+    <input type="checkbox" id="theme-toggle-checkbox" class="theme-toggle-checkbox">
+    
+    <!-- Checkboxes ocultas para carrinho (CSS-only shopping cart) -->
+    <input type="checkbox" id="cart-item-1" class="cart-item-checkbox">
+    <input type="checkbox" id="cart-item-2" class="cart-item-checkbox">
+    <input type="checkbox" id="cart-item-3" class="cart-item-checkbox">
+    <input type="checkbox" id="cart-item-4" class="cart-item-checkbox">
+    <input type="checkbox" id="cart-item-5" class="cart-item-checkbox">
+    <input type="checkbox" id="cart-item-6" class="cart-item-checkbox">
+    <input type="checkbox" id="cart-item-7" class="cart-item-checkbox">
+    <input type="checkbox" id="cart-item-8" class="cart-item-checkbox">
+    
+    <!-- Checkboxes ocultas para favoritos (CSS-only favorites) -->
+    <input type="checkbox" id="fav-item-1" class="fav-item-checkbox">
+    <input type="checkbox" id="fav-item-2" class="fav-item-checkbox">
+    <input type="checkbox" id="fav-item-3" class="fav-item-checkbox">
+    <input type="checkbox" id="fav-item-4" class="fav-item-checkbox">
+    <input type="checkbox" id="fav-item-5" class="fav-item-checkbox">
+    <input type="checkbox" id="fav-item-6" class="fav-item-checkbox">
+    <input type="checkbox" id="fav-item-7" class="fav-item-checkbox">
+    <input type="checkbox" id="fav-item-8" class="fav-item-checkbox">
+    
+    <!-- Header -->
+    <header class="main-header" role="banner">
+        <div class="header-container">
+            <div class="logo-section">
+                <h1 class="logo">Madeira<span>GO</span></h1>
+                <p class="tagline">Explore • Planeje • Viaje</p>
+            </div>
+            
+            <nav class="nav-container" role="navigation">
+                <ul class="nav-menu">
+
+                    <li><a href="#dashboard" class="nav-link">Início</a></li>
+                    <li class="nav-item-dropdown">
+                        <a href="#" class="nav-link">Lugares para Ver</a>
+                        <ul class="submenu">
+                            <li><a href="#principais-atraccoes">Principais Atrações</a></li>
+                            <li><a href="#costa-norte">Costa Norte</a></li>
+                            <li><a href="#costa-sul">Costa Sul</a></li>
+                            <li><a href="#porto-santo">Porto Santo</a></li>
+                            <li><a href="#capital">Funchal</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item-dropdown">
+                        <a href="#" class="nav-link">Coisas para Fazer</a>
+                        <ul class="submenu">
+                            <li><a href="#melhores-exp">Melhores Experiências</a></li>
+                            <li><a href="#atividades-norte">Costa Norte</a></li>
+                            <li><a href="#atividades-sul">Costa Sul</a></li>
+                            <li><a href="#atividades-porto">Porto Santo</a></li>
+                            <li><a href="#atividades-capital">Funchal</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item-dropdown">
+                        <a href="#" class="nav-link">Inspiração</a>
+                        <ul class="submenu">
+                            <li><a href="#inspiracao-tendencias">Tendências</a></li>
+                            <li><a href="#melhores-visitas">Melhores Lugares</a></li>
+                            <li><a href="#festas-arraiais">Festas e Arraiais</a></li>
+                            <li><a href="#gastronomia-insp">Gastronomia</a></li>
+                            <li><a href="#trilhos-levadas">Trilhos e Levadas</a></li>
+                            <li><a href="#natureza-insp">Natureza</a></li>
+                            <li><a href="#cultura-insp">Cultura</a></li>
+                            <li><a href="#desportos-insp">Desportos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#carrinho" class="nav-link">Carrinho</a></li>
+                    <li><a href="#favoritos" class="nav-link">Favoritos</a></li>
+                    <li><a href="#roteiro" class="nav-link">Roteiro</a></li>
+                    <li class="nav-item-dropdown">
+                        <a href="#" class="nav-link">Notificações</a>
+                        <ul class="submenu">
+                            <li><a href="#notif-updates">Updates</a></li>
+                            <li><a href="#notif-atividades">Atividades</a></li>
+                            <li><a href="#notif-pagamentos">Pagamentos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item-dropdown">
+                        <a href="#" class="nav-link">Minha Conta</a>
+                        <ul class="submenu">
+                            <li><a href="#preferencias">Preferências</a></li>
+                            <li><a href="#dados-pessoais">Dados Pessoais</a></li>
+                            <li><a href="#privacidade">Privacidade</a></li>
+                            <li><a href="#ajuda">Ajuda</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="header-tools">
+                <label for="theme-toggle-checkbox" class="btn-icon theme-toggle-label">
+                    <span class="icon-light">☀️</span>
+                    <span class="icon-dark">🌙</span>
+                </label>
+                <a href="#carrinho" class="btn-icon cart-icon">
+                    🛒 <span class="badge" id="cart-badge">0</span>
+                </a>
+                <a href="#favoritos" class="btn-icon">❤️</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content" role="main">
+        
+        <!-- ========== DASHBOARD ========== -->
+        <section id="dashboard" class="page-section active" role="region" aria-label="Dashboard">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h2>Explore a Madeira</h2>
+                    <p>Descubra as melhores atrações, atividades e experiências</p>
+                    <div class="search-box">
+                        <input type="text" id="search-input" class="search-input" placeholder="Pesquisar...">
+                        <button class="btn btn-primary">🔍 Pesquisar</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop" alt="Madeira">
+                </div>
+            </div>
+
+            <section class="activities-section">
+                <h3 class="section-title">Sugestão de Atividades</h3>
+                <div class="card-grid subgrid">
+                    <article class="activity-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=400&h=300&fit=crop" alt="Levada">
+                            <span class="badge-category">Natureza</span>
+                        </div>
+                        <div class="card-content">
+                            <h4>Levada das 25 Fontes</h4>
+                            <p>Trilho deslumbrante com quedas de água</p>
+                            <div class="card-rating">⭐⭐⭐⭐⭐ (245)</div>
+                            <div class="card-price">€45</div>
+                            <div class="card-footer">
+                                <button class="btn btn-small" type="button">❤ Favorito</button>
+                                <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="activity-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" alt="Pico">
+                            <span class="badge-category">Montanha</span>
+                        </div>
+                        <div class="card-content">
+                            <h4>Pico do Arieiro</h4>
+                            <p>Trilho montanhoso panorâmico</p>
+                            <div class="card-rating">⭐⭐⭐⭐⭐ (312)</div>
+                            <div class="card-price">€50</div>
+                            <div class="card-footer">
+                                <button class="btn btn-small" type="button">❤ Favorito</button>
+                                <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="activity-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop" alt="Funchal">
+                            <span class="badge-category">Cultura</span>
+                        </div>
+                        <div class="card-content">
+                            <h4>Funchal City Tour</h4>
+                            <p>Passeio pela capital</p>
+                            <div class="card-rating">⭐⭐⭐⭐ (189)</div>
+                            <div class="card-price">€35</div>
+                            <div class="card-footer">
+                                <button class="btn btn-small" type="button">❤ Favorito</button>
+                                <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="activity-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop" alt="Gastronomia">
+                            <span class="badge-category">Gastronomia</span>
+                        </div>
+                        <div class="card-content">
+                            <h4>Experiência Gastronómica</h4>
+                            <p>Degustação de pratos típicos</p>
+                            <div class="card-rating">⭐⭐⭐⭐⭐ (278)</div>
+                            <div class="card-price">€60</div>
+                            <div class="card-footer">
+                                <button class="btn btn-small" type="button">❤ Favorito</button>
+                                <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </section>
+
+        <!-- ========== COISAS PARA FAZER ========== -->
+        <section id="melhores-exp" class="page-section generic-section">
+            <a href="#dashboard" class="btn-back">← Voltar</a>
+            <h2>Melhores Experiências</h2>
+            <div class="subgrid">
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=400&h=300&fit=crop" alt="Levada">
+                        <span class="badge-category">Trilho</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Levada das 25 Fontes</h4>
+                        <p>Trilho deslumbrante com quedas de água</p>
+                        <div class="card-rating">⭐⭐⭐⭐⭐ (245)</div>
+                        <div class="card-price">€45</div>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" alt="Pico">
+                        <span class="badge-category">Montanha</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Pico do Arieiro</h4>
+                        <p>Trilho montanhoso panorâmico</p>
+                        <div class="card-rating">⭐⭐⭐⭐⭐ (312)</div>
+                        <div class="card-price">€50</div>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop" alt="Gastronomia">
+                        <span class="badge-category">Gastronomia</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Experiência Gastronómica</h4>
+                        <p>Degustação de pratos típicos</p>
+                        <div class="card-rating">⭐⭐⭐⭐⭐ (278)</div>
+                        <div class="card-price">€60</div>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1505228395891-9a51e7e86e81?w=400&h=300&fit=crop" alt="Surf">
+                        <span class="badge-category">Água</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Aula de Surf</h4>
+                        <p>Experiência em praias com ondas constantes</p>
+                        <div class="card-rating">⭐⭐⭐⭐⭐ (156)</div>
+                        <div class="card-price">€60</div>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="atividades-norte" class="page-section generic-section">
+            <a href="#dashboard" class="btn-back">← Voltar</a>
+            <h2>Atividades - Costa Norte</h2>
+            <div class="subgrid">
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=400&h=300&fit=crop" alt="Levada">
+                        <span class="badge-category">Trilho</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Levada das 25 Fontes</h4>
+                        <p>Trilho épico da Costa Norte</p>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" alt="Pico">
+                        <span class="badge-category">Montanha</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Pico Ruivo</h4>
+                        <p>Pico mais alto da Madeira</p>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="atividades-sul" class="page-section generic-section">
+            <a href="#dashboard" class="btn-back">← Voltar</a>
+            <h2>Atividades - Costa Sul</h2>
+            <div class="subgrid">
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=400&h=300&fit=crop" alt="Cabo">
+                        <span class="badge-category">Miradouro</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Cabo Girão Tour</h4>
+                        <p>Penhasco mais alto com plataforma de vidro</p>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop" alt="Funchal">
+                        <span class="badge-category">Cultura</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Funchal City Tour</h4>
+                        <p>Passeio pela capital</p>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="atividades-porto" class="page-section generic-section">
+            <a href="#dashboard" class="btn-back">← Voltar</a>
+            <h2>Atividades - Porto Santo</h2>
+            <div class="subgrid">
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop" alt="Praia">
+                        <span class="badge-category">Praia</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Praia de Porto Santo</h4>
+                        <p>Praia tranquila e acessível</p>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1505228395891-9a51e7e86e81?w=400&h=300&fit=crop" alt="Mergulho">
+                        <span class="badge-category">Água</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Mergulho Submarino</h4>
+                        <p>Explorar a vida marinha da Madeira</p>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="atividades-capital" class="page-section generic-section">
+            <a href="#dashboard" class="btn-back">← Voltar</a>
+            <h2>Atividades - Funchal</h2>
+            <div class="subgrid">
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop" alt="Funchal">
+                        <span class="badge-category">Cultura</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Funchal City Tour</h4>
+                        <p>Passeio completo pela cidade</p>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop" alt="Gastronomia">
+                        <span class="badge-category">Gastronomia</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Jantar Tradicional em Funchal</h4>
+                        <p>Experiência culinária premium</p>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ========== LUGARES PARA VER ========== -->
+        <section id="principais-atraccoes" class="page-section generic-section">
+            <a href="#dashboard" class="btn-back">← Voltar</a>
+            <h2>Principais Atrações</h2>
+            <p>Os destinos mais populares da Madeira</p>
+            <div class="subgrid">
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" alt="Pico">
+                        <span class="badge-category">Natureza</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Pico do Arieiro</h3>
+                        <p>Trilho montanhoso a 1.810 metros</p>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=400&h=300&fit=crop" alt="Cabo">
+                        <span class="badge-category">Miradouro</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Cabo Girão</h3>
+                        <p>Plataforma de vidro sobre penhasco</p>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="costa-norte" class="page-section generic-section">
+            <a href="#dashboard" class="btn-back">← Voltar</a>
+            <h2>Costa Norte</h2>
+            <p>Paisagens selvagens com falésias dramáticas</p>
+            <div class="subgrid">
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" alt="">
+                        <span class="badge-category">Natureza</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Pico do Arieiro</h3>
+                        <p>Trilho espetacular</p>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=400&h=300&fit=crop" alt="">
+                        <span class="badge-category">Natureza</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Levada das 25 Fontes</h3>
+                        <p>Caminho com quedas de água</p>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="costa-sul" class="page-section generic-section">
+            <a href="#dashboard" class="btn-back">← Voltar</a>
+            <h2>Costa Sul</h2>
+            <p>Clima agradável e paisagens protegidas</p>
+            <div class="subgrid">
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=400&h=300&fit=crop" alt="">
+                        <span class="badge-category">Miradouro</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Cabo Girão</h3>
+                        <p>Penhasco mais alto da Europa</p>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop" alt="">
+                        <span class="badge-category">Cultura</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Funchal City Tour</h3>
+                        <p>Passeio pela capital</p>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="porto-santo" class="page-section generic-section">
+            <a href="#dashboard" class="btn-back">← Voltar</a>
+            <h2>Porto Santo</h2>
+            <p>Tranquilidade e praias douradas</p>
+            <div class="subgrid">
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" alt="">
+                        <span class="badge-category">Praia</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Praia de Porto Santo</h3>
+                        <p>Praia tranquila e acessível</p>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="capital" class="page-section generic-section">
+            <a href="#dashboard" class="btn-back">← Voltar</a>
+            <h2>Funchal - A Capital</h2>
+            <p>Cultura, gastronomia e arte</p>
+            <div class="subgrid">
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop" alt="">
+                        <span class="badge-category">Cultura</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Funchal City Tour</h3>
+                        <p>Passeio completo pela cidade</p>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ========== CARRINHO ========== -->
+        <section id="carrinho" class="page-section generic-section">
+            <a href="#dashboard" class="btn-back">← Voltar</a>
+            <h2>Carrinho de Compras</h2>
+            <div class="cart-container">
+                <div class="cart-items">
+                    <ul id="cart-list">
+                        <li class="empty-message">O seu carrinho está vazio</li>
+                        <li id="cart-item-1-display" class="hidden-cart-item" style="display: none; list-style: none; padding: 1rem; border: 1px solid var(--gray-300); border-radius: 8px; margin-bottom: 0.5rem;">
+                            <strong>Levada das 25 Fontes</strong> - €45.00
+                            <button class="btn btn-small btn-danger" style="float: right;">✕ Remover</button>
+                        </li>
+                        <li id="cart-item-2-display" class="hidden-cart-item" style="display: none; list-style: none; padding: 1rem; border: 1px solid var(--gray-300); border-radius: 8px; margin-bottom: 0.5rem;">
+                            <strong>Pico do Arieiro</strong> - €50.00
+                            <button class="btn btn-small btn-danger" style="float: right;">✕ Remover</button>
+                        </li>
+                        <li id="cart-item-3-display" class="hidden-cart-item" style="display: none; list-style: none; padding: 1rem; border: 1px solid var(--gray-300); border-radius: 8px; margin-bottom: 0.5rem;">
+                            <strong>Funchal City Tour</strong> - €35.00
+                            <button class="btn btn-small btn-danger" style="float: right;">✕ Remover</button>
+                        </li>
+                        <li id="cart-item-4-display" class="hidden-cart-item" style="display: none; list-style: none; padding: 1rem; border: 1px solid var(--gray-300); border-radius: 8px; margin-bottom: 0.5rem;">
+                            <strong>Experiência Gastronómica</strong> - €60.00
+                            <button class="btn btn-small btn-danger" style="float: right;">✕ Remover</button>
+                        </li>
+                        <li id="cart-item-5-display" class="hidden-cart-item" style="display: none; list-style: none; padding: 1rem; border: 1px solid var(--gray-300); border-radius: 8px; margin-bottom: 0.5rem;">
+                            <strong>Trilho Pico Ruivo</strong> - €40.00
+                            <button class="btn btn-small btn-danger" style="float: right;">✕ Remover</button>
+                        </li>
+                        <li id="cart-item-6-display" class="hidden-cart-item" style="display: none; list-style: none; padding: 1rem; border: 1px solid var(--gray-300); border-radius: 8px; margin-bottom: 0.5rem;">
+                            <strong>Passeio de Barco</strong> - €55.00
+                            <button class="btn btn-small btn-danger" style="float: right;">✕ Remover</button>
+                        </li>
+                        <li id="cart-item-7-display" class="hidden-cart-item" style="display: none; list-style: none; padding: 1rem; border: 1px solid var(--gray-300); border-radius: 8px; margin-bottom: 0.5rem;">
+                            <strong>Tour Português</strong> - €30.00
+                            <button class="btn btn-small btn-danger" style="float: right;">✕ Remover</button>
+                        </li>
+                        <li id="cart-item-8-display" class="hidden-cart-item" style="display: none; list-style: none; padding: 1rem; border: 1px solid var(--gray-300); border-radius: 8px; margin-bottom: 0.5rem;">
+                            <strong>Experiência Premium</strong> - €75.00
+                            <button class="btn btn-small btn-danger" style="float: right;">✕ Remover</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cart-summary">
+                    <p>Total de itens: <strong id="cart-total-items">0</strong></p>
+                    <p>Total: <strong id="cart-total-price">€0.00</strong></p>
+                    <button class="btn btn-primary btn-large" id="btn-finalizar">✓ Finalizar Compra</button>
+                    <button class="btn btn-secondary" type="button">🛒 Continuar Compras</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== FAVORITOS ========== -->
+        <section id="favoritos" class="page-section generic-section">
+            <a href="#dashboard" class="btn-back">← Voltar</a>
+            <h2>Meus Favoritos</h2>
+            <div class="subgrid" id="favorites-grid">
+                <div class="empty-message">Nenhum favorito adicionado</div>
+                
+                <article id="fav-item-1-display" class="hidden-fav-item activity-card" style="display: none;">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=400&h=300&fit=crop" alt="Levada">
+                        <span class="badge-category">Natureza</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Levada das 25 Fontes</h4>
+                        <p>Trilho deslumbrante com quedas de água</p>
+                        <div class="card-rating">⭐⭐⭐⭐⭐ (245)</div>
+                        <div class="card-price">€45</div>
+                        <div class="card-footer">
+                            <label for="fav-item-1" class="btn btn-small">❤ Favorito</label>
+                            <label for="cart-item-1" class="btn btn-small btn-primary">🛒 Comprar</label>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="fav-item-2-display" class="hidden-fav-item activity-card" style="display: none;">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" alt="Pico">
+                        <span class="badge-category">Montanha</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Pico do Arieiro</h4>
+                        <p>Trilho montanhoso panorâmico</p>
+                        <div class="card-rating">⭐⭐⭐⭐⭐ (312)</div>
+                        <div class="card-price">€50</div>
+                        <div class="card-footer">
+                            <label for="fav-item-2" class="btn btn-small">❤ Favorito</label>
+                            <label for="cart-item-2" class="btn btn-small btn-primary">🛒 Comprar</label>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="fav-item-3-display" class="hidden-fav-item activity-card" style="display: none;">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop" alt="Funchal">
+                        <span class="badge-category">Cultura</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Funchal City Tour</h4>
+                        <p>Passeio pela capital</p>
+                        <div class="card-rating">⭐⭐⭐⭐ (189)</div>
+                        <div class="card-price">€35</div>
+                        <div class="card-footer">
+                            <label for="fav-item-3" class="btn btn-small">❤ Favorito</label>
+                            <label for="cart-item-3" class="btn btn-small btn-primary">🛒 Comprar</label>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="fav-item-4-display" class="hidden-fav-item activity-card" style="display: none;">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop" alt="Gastronomia">
+                        <span class="badge-category">Gastronomia</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Experiência Gastronómica</h4>
+                        <p>Degustação de pratos típicos</p>
+                        <div class="card-rating">⭐⭐⭐⭐⭐ (278)</div>
+                        <div class="card-price">€60</div>
+                        <div class="card-footer">
+                            <label for="fav-item-4" class="btn btn-small">❤ Favorito</label>
+                            <label for="cart-item-4" class="btn btn-small btn-primary">🛒 Comprar</label>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="fav-item-5-display" class="hidden-fav-item activity-card" style="display: none;">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=400&h=300&fit=crop" alt="Pico Ruivo">
+                        <span class="badge-category">Trilho</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Trilho Pico Ruivo</h4>
+                        <p>Caminhada épica montanhosa</p>
+                        <div class="card-rating">⭐⭐⭐⭐⭐ (198)</div>
+                        <div class="card-price">€40</div>
+                        <div class="card-footer">
+                            <label for="fav-item-5" class="btn btn-small">❤ Favorito</label>
+                            <label for="cart-item-5" class="btn btn-small btn-primary">🛒 Comprar</label>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="fav-item-6-display" class="hidden-fav-item activity-card" style="display: none;">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop" alt="Barco">
+                        <span class="badge-category">Água</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Passeio de Barco</h4>
+                        <p>Exploração das costas</p>
+                        <div class="card-rating">⭐⭐⭐⭐ (267)</div>
+                        <div class="card-price">€55</div>
+                        <div class="card-footer">
+                            <label for="fav-item-6" class="btn btn-small">❤ Favorito</label>
+                            <label for="cart-item-6" class="btn btn-small btn-primary">🛒 Comprar</label>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="fav-item-7-display" class="hidden-fav-item activity-card" style="display: none;">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop" alt="Português">
+                        <span class="badge-category">Cultura</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Tour Português</h4>
+                        <p>Imersão na cultura madeirense</p>
+                        <div class="card-rating">⭐⭐⭐⭐ (312)</div>
+                        <div class="card-price">€30</div>
+                        <div class="card-footer">
+                            <label for="fav-item-7" class="btn btn-small">❤ Favorito</label>
+                            <label for="cart-item-7" class="btn btn-small btn-primary">🛒 Comprar</label>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="fav-item-8-display" class="hidden-fav-item activity-card" style="display: none;">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=400&h=300&fit=crop" alt="Premium">
+                        <span class="badge-category">Premium</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Experiência Premium</h4>
+                        <p>Tour exclusivo completo</p>
+                        <div class="card-rating">⭐⭐⭐⭐⭐ (89)</div>
+                        <div class="card-price">€75</div>
+                        <div class="card-footer">
+                            <label for="fav-item-8" class="btn btn-small">❤ Favorito</label>
+                            <label for="cart-item-8" class="btn btn-small btn-primary">🛒 Comprar</label>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ========== ROTEIRO ========== -->
+        <section id="roteiro" class="page-section generic-section">
+            <a href="#dashboard" class="btn-back">← Voltar</a>
+            <h2>Meu Roteiro Personalizado</h2>
+            <div class="tabs-container">
+                <div class="tabs-buttons">
+                    <button class="tab-btn active" data-tab="atividades-planejadas">Atividades a Realizar</button>
+                    <button class="tab-btn" data-tab="arquivo-atividades">Arquivo</button>
+                </div>
+                <div class="tabs-content">
+                    <div id="atividades-planejadas" class="tab-content active">
+                        <div class="subgrid" id="planned-activities">
+                            <div class="empty-message">Nenhuma atividade planejada</div>
+                        </div>
+                    </div>
+                    <div id="arquivo-atividades" class="tab-content">
+                        <div class="subgrid" id="archived-activities">
+                            <div class="empty-message">Nenhuma atividade arquivada</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== PREFERÊNCIAS ========== -->
+        <section id="preferencias" class="page-section generic-section">
+            <a href="#dashboard" class="btn-back">← Voltar</a>
+            <h2>Preferências</h2>
+            <form class="preferences-form">
+                <fieldset>
+                    <legend>Idioma</legend>
+                    <label><input type="radio" name="idioma" value="pt" checked> Português</label>
+                    <label><input type="radio" name="idioma" value="en"> Inglês</label>
+                </fieldset>
+                <fieldset>
+                    <legend>Tema</legend>
+                    <label><input type="radio" name="tema" value="claro" checked> Claro</label>
+                    <label><input type="radio" name="tema" value="escuro"> Escuro</label>
+                </fieldset>
+                <fieldset>
+                    <legend>Moeda</legend>
+                    <label><input type="radio" name="moeda" value="eur" checked> EUR (€)</label>
+                    <label><input type="radio" name="moeda" value="usd"> USD ($)</label>
+                </fieldset>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </form>
+        </section>
+
+        <!-- ========== DADOS PESSOAIS ========== -->
+        <section id="dados-pessoais" class="page-section generic-section">
+            <a href="#dashboard" class="btn-back">← Voltar</a>
+            <h2>Dados Pessoais</h2>
+            <form class="data-form">
+                <fieldset>
+                    <legend>Informação Biográfica</legend>
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" class="user-input" placeholder="Nome completo">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" class="user-input" placeholder="email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone:</label>
+                        <input type="tel" id="telefone" class="user-input" placeholder="+351 9...">
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Morada</legend>
+                    <div class="form-group">
+                        <label for="rua">Rua:</label>
+                        <input type="text" id="rua" class="user-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="cidade">Cidade:</label>
+                        <input type="text" id="cidade" class="user-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="pais">País:</label>
+                        <input type="text" id="pais" class="user-input">
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Documentos</legend>
+                    <div class="form-group">
+                        <label for="cc">Cartão de Cidadão:</label>
+                        <input type="text" id="cc" class="user-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="passaporte">Passaporte:</label>
+                        <input type="text" id="passaporte" class="user-input">
+                    </div>
+                </fieldset>
+                <button type="submit" class="btn btn-primary">Guardar Dados</button>
+            </form>
+        </section>
+
+        <!-- ========== PRIVACIDADE ========== -->
+        <section id="privacidade" class="page-section generic-section">
+            <a href="#dashboard" class="btn-back">← Voltar</a>
+            <h2>Política de Privacidade</h2>
+            <form class="privacy-form">
+                <fieldset>
+                    <legend>Autorização de Dados</legend>
+                    <label><input type="checkbox" checked> Email pessoal</label>
+                    <label><input type="checkbox" checked> Marketing</label>
+                    <label><input type="checkbox"> Analytics</label>
+                </fieldset>
+                <fieldset>
+                    <legend>Email</legend>
+                    <label><input type="checkbox" checked> Notificações</label>
+                    <label><input type="checkbox" checked> Atualizações</label>
+                </fieldset>
+                <fieldset>
+                    <legend>Alumni</legend>
+                    <label><input type="checkbox"> Incluir-me na lista</label>
+                </fieldset>
+                <button type="submit" class="btn btn-primary">Guardar Privacidade</button>
+            </form>
+        </section>
+
+        <!-- ========== AJUDA ========== -->
+        <section id="ajuda" class="page-section generic-section">
+            <a href="#dashboard" class="btn-back">← Voltar</a>
+            <h2>Ajuda e Suporte</h2>
+            <div class="help-container">
+                <div class="help-card">
+                    <h3>📞 Contactos</h3>
+                    <p><strong>Email:</strong> info@madeirago.com</p>
+                    <p><strong>Telefone:</strong> +351 291 XXXXX</p>
+                    <p><strong>Horário:</strong> Seg-Sex 9:00-18:00</p>
+                </div>
+                <div class="help-card">
+                    <h3>💬 Contacto Direto</h3>
+                    <form class="contact-form">
+                        <input type="text" class="user-input" placeholder="Nome" required>
+                        <input type="email" class="user-input" placeholder="Email" required>
+                        <input type="text" class="user-input" placeholder="Assunto" required>
+                        <textarea class="user-input" rows="4" placeholder="Mensagem" required></textarea>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
+                <div class="help-card">
+                    <h3>❓ Perguntas Frequentes</h3>
+                    <details>
+                        <summary>Como adicionar ao carrinho?</summary>
+                        <p>Clique no botão "🛒 Comprar"</p>
+                    </details>
+                    <details>
+                        <summary>Como marcar favorito?</summary>
+                        <p>Clique no botão "❤ Favorito"</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== NOTIFICAÇÕES ========== -->
+        <section id="notif-updates" class="page-section generic-section">
+            <a href="#dashboard" class="btn-back">← Voltar</a>
+            <h2>Atualizações</h2>
+            <article class="notification-item">
+                <h3>Versão 2.1.0 - Janeiro 2026</h3>
+                <p>✨ Sistema completo de carrinho e favoritos</p>
+            </article>
+        </section>
+
+        <section id="notif-atividades" class="page-section generic-section">
+            <a href="#dashboard" class="btn-back">← Voltar</a>
+            <h2>Notificações de Atividades</h2>
+            <div id="activity-notifications" class="notifications-list">
+                <div class="empty-message">Nenhuma notificação</div>
+            </div>
+        </section>
+
+        <section id="notif-pagamentos" class="page-section generic-section">
+            <a href="#dashboard" class="btn-back">← Voltar</a>
+            <h2>Recibos de Pagamento</h2>
+            <div id="payment-notifications" class="notifications-list">
+                <div class="empty-message">Nenhum recibo</div>
+            </div>
+        </section>
+
+        <!-- ========== INSPIRAÇÃO ========== -->
+        <section id="inspiracao-tendencias" class="page-section generic-section">
+            <a href="#dashboard" class="btn-back">← Voltar</a>
+            <h2>Tendências Atuais</h2>
+            <div class="subgrid">
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" alt="Trilhos">
+                        <span class="badge-category">🔥 Popular</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Trilhos Selvagens</h4>
+                        <p>Aventura pelas montanhas da Madeira</p>
+                        <div class="card-rating">⭐⭐⭐⭐⭐ (512)</div>
+                        <div class="card-price">€55</div>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop" alt="Experiência">
+                        <span class="badge-category">🆕 Novo</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Experiência Privada VIP</h4>
+                        <p>Tour exclusivo personalizado</p>
+                        <div class="card-rating">⭐⭐⭐⭐⭐ (89)</div>
+                        <div class="card-price">€250</div>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="melhores-visitas" class="page-section generic-section">
+            <a href="#dashboard" class="btn-back">← Voltar</a>
+            <h2>Melhores Lugares a Visitar</h2>
+            <div class="subgrid">
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=400&h=300&fit=crop" alt="Cabo Girão">
+                        <span class="badge-category">Miradouro</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Cabo Girão</h4>
+                        <p>Penhasco mais alto da Europa com plataforma de vidro</p>
+                        <div class="card-rating">⭐⭐⭐⭐⭐ (856)</div>
+                        <div class="card-price">€35</div>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" alt="Pico">
+                        <span class="badge-category">Montanha</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Pico do Arieiro</h4>
+                        <p>Ponto mais alto com vistas panorâmicas incríveis</p>
+                        <div class="card-rating">⭐⭐⭐⭐⭐ (734)</div>
+                        <div class="card-price">€50</div>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=400&h=300&fit=crop" alt="Levadas">
+                        <span class="badge-category">Natureza</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Levada das 25 Fontes</h4>
+                        <p>Trilho lendário com múltiplas quedas de água</p>
+                        <div class="card-rating">⭐⭐⭐⭐⭐ (923)</div>
+                        <div class="card-price">€45</div>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="festas-arraiais" class="page-section generic-section">
+            <a href="#dashboard" class="btn-back">← Voltar</a>
+            <h2>Festas e Arraiais</h2>
+            <div class="subgrid">
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1514306688005-ccc4212e8da4?w=400&h=300&fit=crop" alt="Festival">
+                        <span class="badge-category">🎉 Festival</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Festival da Flor</h4>
+                        <p>Celebração anual com flores e desfiles em Abril</p>
+                        <div class="card-price">Grátis</div>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Inscrever</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=300&fit=crop" alt="Carnaval">
+                        <span class="badge-category">🎭 Carnaval</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Carnaval da Madeira</h4>
+                        <p>Celebração vibrante com desfiles e fantasias</p>
+                        <div class="card-price">€25</div>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="gastronomia-insp" class="page-section generic-section">
+            <a href="#dashboard" class="btn-back">← Voltar</a>
+            <h2>Gastronomia</h2>
+            <div class="subgrid">
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop" alt="Espetada">
+                        <span class="badge-category">🍖 Tradicional</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Espetada & Bolo de Caco</h4>
+                        <p>Experiência gastronómica tradicional madeirense</p>
+                        <div class="card-rating">⭐⭐⭐⭐⭐ (445)</div>
+                        <div class="card-price">€65</div>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop" alt="Vinho">
+                        <span class="badge-category">🍷 Degustação</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Degustação de Vinho Madeira</h4>
+                        <p>Conhecer os vinhos históricos da região</p>
+                        <div class="card-rating">⭐⭐⭐⭐⭐ (334)</div>
+                        <div class="card-price">€40</div>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="trilhos-levadas" class="page-section generic-section">
+            <a href="#dashboard" class="btn-back">← Voltar</a>
+            <h2>Trilhos e Levadas</h2>
+            <div class="subgrid">
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=400&h=300&fit=crop" alt="Levada">
+                        <span class="badge-category">🥾 Fácil</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Levada da Madalena</h4>
+                        <p>Trilho fácil e scenic com vista para vales</p>
+                        <div class="card-rating">⭐⭐⭐⭐ (267)</div>
+                        <div class="card-price">€35</div>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" alt="Montanha">
+                        <span class="badge-category">🥾 Difícil</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Levada do Caldeirão Verde</h4>
+                        <p>Trilho desafiante com paisagens selvagens</p>
+                        <div class="card-rating">⭐⭐⭐⭐⭐ (189)</div>
+                        <div class="card-price">€50</div>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="natureza-insp" class="page-section generic-section">
+            <a href="#dashboard" class="btn-back">← Voltar</a>
+            <h2>Natureza</h2>
+            <div class="subgrid">
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" alt="Natureza">
+                        <span class="badge-category">🌿 Preservação</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Trilho das Flores</h4>
+                        <p>Passeio entre espécies endémicas da Madeira</p>
+                        <div class="card-rating">⭐⭐⭐⭐⭐ (412)</div>
+                        <div class="card-price">€40</div>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=400&h=300&fit=crop" alt="Floresta">
+                        <span class="badge-category">🌲 UNESCO</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Floresta Laurissilva</h4>
+                        <p>Visita à floresta primária Património UNESCO</p>
+                        <div class="card-rating">⭐⭐⭐⭐⭐ (678)</div>
+                        <div class="card-price">€55</div>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="cultura-insp" class="page-section generic-section">
+            <a href="#dashboard" class="btn-back">← Voltar</a>
+            <h2>Cultura</h2>
+            <div class="subgrid">
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop" alt="Cultura">
+                        <span class="badge-category">🏛️ Museus</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Museu de Arte Sacra</h4>
+                        <p>Colecção de arte religiosa e histórica</p>
+                        <div class="card-rating">⭐⭐⭐⭐ (245)</div>
+                        <div class="card-price">€12</div>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=300&fit=crop" alt="Artesanato">
+                        <span class="badge-category">🎨 Artesanato</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Oficina de Bordado Tradicional</h4>
+                        <p>Aprender as técnicas ancestrais de bordado</p>
+                        <div class="card-rating">⭐⭐⭐⭐⭐ (167)</div>
+                        <div class="card-price">€45</div>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="desportos-insp" class="page-section generic-section">
+            <a href="#dashboard" class="btn-back">← Voltar</a>
+            <h2>Desportos</h2>
+            <div class="subgrid">
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1505228395891-9a51e7e86e81?w=400&h=300&fit=crop" alt="Surf">
+                        <span class="badge-category">🏄 Água</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Aula de Surf</h4>
+                        <p>Aula iniciante em praia com ondas constantes</p>
+                        <div class="card-rating">⭐⭐⭐⭐⭐ (334)</div>
+                        <div class="card-price">€60</div>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="activity-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" alt="Escalada">
+                        <span class="badge-category">🧗 Montanha</span>
+                    </div>
+                    <div class="card-content">
+                        <h4>Escalada em Rocha</h4>
+                        <p>Escalada supervisionada em formações vulcânicas</p>
+                        <div class="card-rating">⭐⭐⭐⭐⭐ (278)</div>
+                        <div class="card-price">€75</div>
+                        <div class="card-footer">
+                            <button class="btn btn-small" type="button">❤ Favorito</button>
+                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Sobre MadeiraGO</h4>
+                <ul>
+                    <li><a href="#about">Sobre Nós</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#careers">Carreiras</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Suporte</h4>
+                <ul>
+                    <li><a href="#ajuda">Ajuda</a></li>
+                    <li><a href="#contact">Contacte-nos</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#terms">Termos</a></li>
+                    <li><a href="#privacidade">Privacidade</a></li>
+                    <li><a href="#cookies">Cookies</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <a href="https://facebook.com" target="_blank">f</a>
+                <a href="https://twitter.com" target="_blank">𝕏</a>
+                <a href="https://instagram.com" target="_blank">📷</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 MadeiraGO. Todos os direitos reservados.</p>
+            <p>Desenvolvido com ❤️ para os viajantes da Madeira</p>
+        </div>
+    </footer>
+
+    <!-- Modal Finalizar -->
+    <dialog id="finalizar-modal" class="modal">
+        <div class="modal-content">
+            <h3>Finalizar Roteiro</h3>
+            <form id="finalizar-form">
+                <div class="form-group">
+                    <label for="modal-nome">Nome:</label>
+                    <input type="text" id="modal-nome" class="user-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="modal-email">Email:</label>
+                    <input type="email" id="modal-email" class="user-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="modal-data">Data:</label>
+                    <input type="date" id="modal-data" class="user-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="modal-participantes">Participantes:</label>
+                    <input type="number" id="modal-participantes" class="user-input" min="1" value="1" required>
+                </div>
+                <div class="modal-buttons">
+                    <button type="submit" class="btn btn-primary">Confirmar</button>
+                    <button type="button" class="btn btn-secondary" type="button">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+</body>
+</html>
+
+
+
+
+
