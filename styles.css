@@ -197,6 +197,7 @@ a:hover {
     font-weight: 500;
     font-size: 0.9rem;
     transition: var(--transition);
+    display: block; /* Garante clique em toda área */
 }
 
 .nav-link:hover {
@@ -257,6 +258,9 @@ a:hover {
     cursor: pointer;
     transition: var(--transition);
     padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-icon:hover {
@@ -281,6 +285,20 @@ a:hover {
 
 .cart-icon {
     position: relative;
+}
+
+/* =====================================================
+   Menu Responsivo (Lógica CSS Puro)
+   ===================================================== */
+.menu-toggle-checkbox {
+    display: none; /* Checkbox oculta */
+}
+
+.menu-toggle-label {
+    display: none; /* Hambúrguer oculto no Desktop */
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--gray-900);
 }
 
 /* =====================================================
@@ -501,8 +519,10 @@ a:hover {
     gap: 0.75rem;
 }
 
-.card-footer button {
+.card-footer button,
+.card-footer label {
     flex: 1;
+    text-align: center;
 }
 
 /* =====================================================
@@ -755,24 +775,81 @@ details p {
 }
 
 /* =====================================================
-   Responsividade
+   Responsividade & Navbar Mobile
    ===================================================== */
 @media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        padding: 1rem;
+    /* Exibir o ícone do Menu */
+    .menu-toggle-label {
+        display: flex;
     }
 
+    .header-container {
+        padding: 1rem;
+        /* Manter logo e ferramentas na mesma linha */
+        flex-direction: row; 
+    }
+
+    .logo-section {
+        order: 1;
+    }
+
+    .header-tools {
+        order: 2;
+    }
+
+    /* O menu vai para uma nova linha */
     .nav-container {
         order: 3;
         width: 100%;
+        margin-top: 0;
+        transition: var(--transition);
     }
 
+    /* Estilo do menu oculto por padrão */
     .nav-menu {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: all 0.4s ease-out;
+        gap: 0;
     }
 
+    .nav-link {
+        padding: 1rem;
+        border-bottom: 1px solid var(--gray-200);
+        text-align: center;
+    }
+
+    /* Dropdowns no mobile - Expandir */
+    .nav-item-dropdown:hover .submenu, 
+    .submenu {
+        position: static;
+        display: block;
+        box-shadow: none;
+        border: none;
+        background-color: var(--gray-100);
+        width: 100%;
+        padding-left: 1rem;
+        margin-top: 0;
+    }
+    
+    .submenu a {
+        padding: 0.5rem;
+    }
+
+    /* === LÓGICA DE ABERTURA DO MENU === */
+    /* Quando a checkbox #menu-toggle estiver marcada, expanda o menu irmão */
+    .menu-toggle-checkbox:checked ~ .nav-container .nav-menu {
+        max-height: 1000px; /* Altura suficiente para mostrar conteúdo */
+        opacity: 1;
+        margin-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    /* Outros ajustes responsivos */
     .hero-section {
         flex-direction: column;
         gap: 1.5rem;
@@ -808,7 +885,7 @@ details p {
 }
 
 /* =====================================================
-   Utilitários
+   Utilitários & Notificações
    ===================================================== */
 .text-muted {
     color: var(--gray-500);

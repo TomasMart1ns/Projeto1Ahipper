@@ -9,10 +9,8 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Checkbox para tema -->
     <input type="checkbox" id="theme-toggle-checkbox" class="theme-toggle-checkbox">
     
-    <!-- Checkboxes ocultas para carrinho (CSS-only shopping cart) -->
     <input type="checkbox" id="cart-item-1" class="cart-item-checkbox">
     <input type="checkbox" id="cart-item-2" class="cart-item-checkbox">
     <input type="checkbox" id="cart-item-3" class="cart-item-checkbox">
@@ -22,7 +20,6 @@
     <input type="checkbox" id="cart-item-7" class="cart-item-checkbox">
     <input type="checkbox" id="cart-item-8" class="cart-item-checkbox">
     
-    <!-- Checkboxes ocultas para favoritos (CSS-only favorites) -->
     <input type="checkbox" id="fav-item-1" class="fav-item-checkbox">
     <input type="checkbox" id="fav-item-2" class="fav-item-checkbox">
     <input type="checkbox" id="fav-item-3" class="fav-item-checkbox">
@@ -32,9 +29,10 @@
     <input type="checkbox" id="fav-item-7" class="fav-item-checkbox">
     <input type="checkbox" id="fav-item-8" class="fav-item-checkbox">
     
-    <!-- Header -->
     <header class="main-header" role="banner">
         <div class="header-container">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
+
             <div class="logo-section">
                 <h1 class="logo">Madeira<span>GO</span></h1>
                 <p class="tagline">Explore • Planeje • Viaje</p>
@@ -42,7 +40,6 @@
             
             <nav class="nav-container" role="navigation">
                 <ul class="nav-menu">
-
                     <li><a href="#dashboard" class="nav-link">Início</a></li>
                     <li class="nav-item-dropdown">
                         <a href="#" class="nav-link">Lugares para Ver</a>
@@ -109,13 +106,15 @@
                     🛒 <span class="badge" id="cart-badge">0</span>
                 </a>
                 <a href="#favoritos" class="btn-icon">❤️</a>
+                <label for="menu-toggle" class="btn-icon menu-toggle-label">
+                    ☰
+                </label>
             </div>
         </div>
     </header>
 
     <main class="main-content" role="main">
         
-        <!-- ========== DASHBOARD ========== -->
         <section id="dashboard" class="page-section active" role="region" aria-label="Dashboard">
             <div class="hero-section">
                 <div class="hero-content">
@@ -145,8 +144,8 @@
                             <div class="card-rating">⭐⭐⭐⭐⭐ (245)</div>
                             <div class="card-price">€45</div>
                             <div class="card-footer">
-                                <button class="btn btn-small" type="button">❤ Favorito</button>
-                                <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                                <label for="fav-item-1" class="btn btn-small">❤ Favorito</label>
+                                <label for="cart-item-1" class="btn btn-small btn-primary">🛒 Comprar</label>
                             </div>
                         </div>
                     </article>
@@ -161,8 +160,8 @@
                             <div class="card-rating">⭐⭐⭐⭐⭐ (312)</div>
                             <div class="card-price">€50</div>
                             <div class="card-footer">
-                                <button class="btn btn-small" type="button">❤ Favorito</button>
-                                <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                                <label for="fav-item-2" class="btn btn-small">❤ Favorito</label>
+                                <label for="cart-item-2" class="btn btn-small btn-primary">🛒 Comprar</label>
                             </div>
                         </div>
                     </article>
@@ -177,8 +176,8 @@
                             <div class="card-rating">⭐⭐⭐⭐ (189)</div>
                             <div class="card-price">€35</div>
                             <div class="card-footer">
-                                <button class="btn btn-small" type="button">❤ Favorito</button>
-                                <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                                <label for="fav-item-3" class="btn btn-small">❤ Favorito</label>
+                                <label for="cart-item-3" class="btn btn-small btn-primary">🛒 Comprar</label>
                             </div>
                         </div>
                     </article>
@@ -193,8 +192,8 @@
                             <div class="card-rating">⭐⭐⭐⭐⭐ (278)</div>
                             <div class="card-price">€60</div>
                             <div class="card-footer">
-                                <button class="btn btn-small" type="button">❤ Favorito</button>
-                                <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                                <label for="fav-item-4" class="btn btn-small">❤ Favorito</label>
+                                <label for="cart-item-4" class="btn btn-small btn-primary">🛒 Comprar</label>
                             </div>
                         </div>
                     </article>
@@ -202,7 +201,6 @@
             </section>
         </section>
 
-        <!-- ========== COISAS PARA FAZER ========== -->
         <section id="melhores-exp" class="page-section generic-section">
             <a href="#dashboard" class="btn-back">← Voltar</a>
             <h2>Melhores Experiências</h2>
@@ -218,8 +216,8 @@
                         <div class="card-rating">⭐⭐⭐⭐⭐ (245)</div>
                         <div class="card-price">€45</div>
                         <div class="card-footer">
-                            <button class="btn btn-small" type="button">❤ Favorito</button>
-                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                            <label for="fav-item-1" class="btn btn-small">❤ Favorito</label>
+                            <label for="cart-item-1" class="btn btn-small btn-primary">🛒 Comprar</label>
                         </div>
                     </div>
                 </article>
@@ -234,8 +232,8 @@
                         <div class="card-rating">⭐⭐⭐⭐⭐ (312)</div>
                         <div class="card-price">€50</div>
                         <div class="card-footer">
-                            <button class="btn btn-small" type="button">❤ Favorito</button>
-                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                            <label for="fav-item-2" class="btn btn-small">❤ Favorito</label>
+                            <label for="cart-item-2" class="btn btn-small btn-primary">🛒 Comprar</label>
                         </div>
                     </div>
                 </article>
@@ -250,8 +248,8 @@
                         <div class="card-rating">⭐⭐⭐⭐⭐ (278)</div>
                         <div class="card-price">€60</div>
                         <div class="card-footer">
-                            <button class="btn btn-small" type="button">❤ Favorito</button>
-                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                            <label for="fav-item-4" class="btn btn-small">❤ Favorito</label>
+                            <label for="cart-item-4" class="btn btn-small btn-primary">🛒 Comprar</label>
                         </div>
                     </div>
                 </article>
@@ -287,8 +285,8 @@
                         <h4>Levada das 25 Fontes</h4>
                         <p>Trilho épico da Costa Norte</p>
                         <div class="card-footer">
-                            <button class="btn btn-small" type="button">❤ Favorito</button>
-                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                            <label for="fav-item-1" class="btn btn-small">❤ Favorito</label>
+                            <label for="cart-item-1" class="btn btn-small btn-primary">🛒 Comprar</label>
                         </div>
                     </div>
                 </article>
@@ -298,11 +296,11 @@
                         <span class="badge-category">Montanha</span>
                     </div>
                     <div class="card-content">
-                        <h4>Pico Ruivo</h4>
+                        <h4>Trilho Pico Ruivo</h4>
                         <p>Pico mais alto da Madeira</p>
                         <div class="card-footer">
-                            <button class="btn btn-small" type="button">❤ Favorito</button>
-                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                            <label for="fav-item-5" class="btn btn-small">❤ Favorito</label>
+                            <label for="cart-item-5" class="btn btn-small btn-primary">🛒 Comprar</label>
                         </div>
                     </div>
                 </article>
@@ -336,8 +334,8 @@
                         <h4>Funchal City Tour</h4>
                         <p>Passeio pela capital</p>
                         <div class="card-footer">
-                            <button class="btn btn-small" type="button">❤ Favorito</button>
-                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                            <label for="fav-item-3" class="btn btn-small">❤ Favorito</label>
+                            <label for="cart-item-3" class="btn btn-small btn-primary">🛒 Comprar</label>
                         </div>
                     </div>
                 </article>
@@ -392,8 +390,8 @@
                         <h4>Funchal City Tour</h4>
                         <p>Passeio completo pela cidade</p>
                         <div class="card-footer">
-                            <button class="btn btn-small" type="button">❤ Favorito</button>
-                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                            <label for="fav-item-3" class="btn btn-small">❤ Favorito</label>
+                            <label for="cart-item-3" class="btn btn-small btn-primary">🛒 Comprar</label>
                         </div>
                     </div>
                 </article>
@@ -406,15 +404,14 @@
                         <h4>Jantar Tradicional em Funchal</h4>
                         <p>Experiência culinária premium</p>
                         <div class="card-footer">
-                            <button class="btn btn-small" type="button">❤ Favorito</button>
-                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                            <label for="fav-item-4" class="btn btn-small">❤ Favorito</label>
+                            <label for="cart-item-4" class="btn btn-small btn-primary">🛒 Comprar</label>
                         </div>
                     </div>
                 </article>
             </div>
         </section>
 
-        <!-- ========== LUGARES PARA VER ========== -->
         <section id="principais-atraccoes" class="page-section generic-section">
             <a href="#dashboard" class="btn-back">← Voltar</a>
             <h2>Principais Atrações</h2>
@@ -429,8 +426,8 @@
                         <h3>Pico do Arieiro</h3>
                         <p>Trilho montanhoso a 1.810 metros</p>
                         <div class="card-footer">
-                            <button class="btn btn-small" type="button">❤ Favorito</button>
-                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                            <label for="fav-item-2" class="btn btn-small">❤ Favorito</label>
+                            <label for="cart-item-2" class="btn btn-small btn-primary">🛒 Comprar</label>
                         </div>
                     </div>
                 </article>
@@ -465,8 +462,8 @@
                         <h3>Pico do Arieiro</h3>
                         <p>Trilho espetacular</p>
                         <div class="card-footer">
-                            <button class="btn btn-small" type="button">❤ Favorito</button>
-                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                            <label for="fav-item-2" class="btn btn-small">❤ Favorito</label>
+                            <label for="cart-item-2" class="btn btn-small btn-primary">🛒 Comprar</label>
                         </div>
                     </div>
                 </article>
@@ -479,8 +476,8 @@
                         <h3>Levada das 25 Fontes</h3>
                         <p>Caminho com quedas de água</p>
                         <div class="card-footer">
-                            <button class="btn btn-small" type="button">❤ Favorito</button>
-                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                            <label for="fav-item-1" class="btn btn-small">❤ Favorito</label>
+                            <label for="cart-item-1" class="btn btn-small btn-primary">🛒 Comprar</label>
                         </div>
                     </div>
                 </article>
@@ -515,8 +512,8 @@
                         <h3>Funchal City Tour</h3>
                         <p>Passeio pela capital</p>
                         <div class="card-footer">
-                            <button class="btn btn-small" type="button">❤ Favorito</button>
-                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                            <label for="fav-item-3" class="btn btn-small">❤ Favorito</label>
+                            <label for="cart-item-3" class="btn btn-small btn-primary">🛒 Comprar</label>
                         </div>
                     </div>
                 </article>
@@ -559,15 +556,14 @@
                         <h3>Funchal City Tour</h3>
                         <p>Passeio completo pela cidade</p>
                         <div class="card-footer">
-                            <button class="btn btn-small" type="button">❤ Favorito</button>
-                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                            <label for="fav-item-3" class="btn btn-small">❤ Favorito</label>
+                            <label for="cart-item-3" class="btn btn-small btn-primary">🛒 Comprar</label>
                         </div>
                     </div>
                 </article>
             </div>
         </section>
 
-        <!-- ========== CARRINHO ========== -->
         <section id="carrinho" class="page-section generic-section">
             <a href="#dashboard" class="btn-back">← Voltar</a>
             <h2>Carrinho de Compras</h2>
@@ -577,48 +573,47 @@
                         <li class="empty-message">O seu carrinho está vazio</li>
                         <li id="cart-item-1-display" class="hidden-cart-item" style="display: none; list-style: none; padding: 1rem; border: 1px solid var(--gray-300); border-radius: 8px; margin-bottom: 0.5rem;">
                             <strong>Levada das 25 Fontes</strong> - €45.00
-                            <button class="btn btn-small btn-danger" style="float: right;">✕ Remover</button>
+                            <label for="cart-item-1" class="btn btn-small btn-danger" style="float: right; cursor:pointer;">✕ Remover</label>
                         </li>
                         <li id="cart-item-2-display" class="hidden-cart-item" style="display: none; list-style: none; padding: 1rem; border: 1px solid var(--gray-300); border-radius: 8px; margin-bottom: 0.5rem;">
                             <strong>Pico do Arieiro</strong> - €50.00
-                            <button class="btn btn-small btn-danger" style="float: right;">✕ Remover</button>
+                            <label for="cart-item-2" class="btn btn-small btn-danger" style="float: right; cursor:pointer;">✕ Remover</label>
                         </li>
                         <li id="cart-item-3-display" class="hidden-cart-item" style="display: none; list-style: none; padding: 1rem; border: 1px solid var(--gray-300); border-radius: 8px; margin-bottom: 0.5rem;">
                             <strong>Funchal City Tour</strong> - €35.00
-                            <button class="btn btn-small btn-danger" style="float: right;">✕ Remover</button>
+                            <label for="cart-item-3" class="btn btn-small btn-danger" style="float: right; cursor:pointer;">✕ Remover</label>
                         </li>
                         <li id="cart-item-4-display" class="hidden-cart-item" style="display: none; list-style: none; padding: 1rem; border: 1px solid var(--gray-300); border-radius: 8px; margin-bottom: 0.5rem;">
                             <strong>Experiência Gastronómica</strong> - €60.00
-                            <button class="btn btn-small btn-danger" style="float: right;">✕ Remover</button>
+                            <label for="cart-item-4" class="btn btn-small btn-danger" style="float: right; cursor:pointer;">✕ Remover</label>
                         </li>
                         <li id="cart-item-5-display" class="hidden-cart-item" style="display: none; list-style: none; padding: 1rem; border: 1px solid var(--gray-300); border-radius: 8px; margin-bottom: 0.5rem;">
                             <strong>Trilho Pico Ruivo</strong> - €40.00
-                            <button class="btn btn-small btn-danger" style="float: right;">✕ Remover</button>
+                            <label for="cart-item-5" class="btn btn-small btn-danger" style="float: right; cursor:pointer;">✕ Remover</label>
                         </li>
                         <li id="cart-item-6-display" class="hidden-cart-item" style="display: none; list-style: none; padding: 1rem; border: 1px solid var(--gray-300); border-radius: 8px; margin-bottom: 0.5rem;">
                             <strong>Passeio de Barco</strong> - €55.00
-                            <button class="btn btn-small btn-danger" style="float: right;">✕ Remover</button>
+                            <label for="cart-item-6" class="btn btn-small btn-danger" style="float: right; cursor:pointer;">✕ Remover</label>
                         </li>
                         <li id="cart-item-7-display" class="hidden-cart-item" style="display: none; list-style: none; padding: 1rem; border: 1px solid var(--gray-300); border-radius: 8px; margin-bottom: 0.5rem;">
                             <strong>Tour Português</strong> - €30.00
-                            <button class="btn btn-small btn-danger" style="float: right;">✕ Remover</button>
+                            <label for="cart-item-7" class="btn btn-small btn-danger" style="float: right; cursor:pointer;">✕ Remover</label>
                         </li>
                         <li id="cart-item-8-display" class="hidden-cart-item" style="display: none; list-style: none; padding: 1rem; border: 1px solid var(--gray-300); border-radius: 8px; margin-bottom: 0.5rem;">
                             <strong>Experiência Premium</strong> - €75.00
-                            <button class="btn btn-small btn-danger" style="float: right;">✕ Remover</button>
+                            <label for="cart-item-8" class="btn btn-small btn-danger" style="float: right; cursor:pointer;">✕ Remover</label>
                         </li>
                     </ul>
                 </div>
                 <div class="cart-summary">
-                    <p>Total de itens: <strong id="cart-total-items">0</strong></p>
-                    <p>Total: <strong id="cart-total-price">€0.00</strong></p>
+                    <p>Total de itens: <strong id="cart-total-items">Calculado no Checkout</strong></p>
+                    <p>Total: <strong id="cart-total-price">---</strong></p>
                     <button class="btn btn-primary btn-large" id="btn-finalizar">✓ Finalizar Compra</button>
                     <button class="btn btn-secondary" type="button">🛒 Continuar Compras</button>
                 </div>
             </div>
         </section>
 
-        <!-- ========== FAVORITOS ========== -->
         <section id="favoritos" class="page-section generic-section">
             <a href="#dashboard" class="btn-back">← Voltar</a>
             <h2>Meus Favoritos</h2>
@@ -636,7 +631,7 @@
                         <div class="card-rating">⭐⭐⭐⭐⭐ (245)</div>
                         <div class="card-price">€45</div>
                         <div class="card-footer">
-                            <label for="fav-item-1" class="btn btn-small">❤ Favorito</label>
+                            <label for="fav-item-1" class="btn btn-small">✕ Remover</label>
                             <label for="cart-item-1" class="btn btn-small btn-primary">🛒 Comprar</label>
                         </div>
                     </div>
@@ -653,7 +648,7 @@
                         <div class="card-rating">⭐⭐⭐⭐⭐ (312)</div>
                         <div class="card-price">€50</div>
                         <div class="card-footer">
-                            <label for="fav-item-2" class="btn btn-small">❤ Favorito</label>
+                            <label for="fav-item-2" class="btn btn-small">✕ Remover</label>
                             <label for="cart-item-2" class="btn btn-small btn-primary">🛒 Comprar</label>
                         </div>
                     </div>
@@ -670,7 +665,7 @@
                         <div class="card-rating">⭐⭐⭐⭐ (189)</div>
                         <div class="card-price">€35</div>
                         <div class="card-footer">
-                            <label for="fav-item-3" class="btn btn-small">❤ Favorito</label>
+                            <label for="fav-item-3" class="btn btn-small">✕ Remover</label>
                             <label for="cart-item-3" class="btn btn-small btn-primary">🛒 Comprar</label>
                         </div>
                     </div>
@@ -687,7 +682,7 @@
                         <div class="card-rating">⭐⭐⭐⭐⭐ (278)</div>
                         <div class="card-price">€60</div>
                         <div class="card-footer">
-                            <label for="fav-item-4" class="btn btn-small">❤ Favorito</label>
+                            <label for="fav-item-4" class="btn btn-small">✕ Remover</label>
                             <label for="cart-item-4" class="btn btn-small btn-primary">🛒 Comprar</label>
                         </div>
                     </div>
@@ -704,7 +699,7 @@
                         <div class="card-rating">⭐⭐⭐⭐⭐ (198)</div>
                         <div class="card-price">€40</div>
                         <div class="card-footer">
-                            <label for="fav-item-5" class="btn btn-small">❤ Favorito</label>
+                            <label for="fav-item-5" class="btn btn-small">✕ Remover</label>
                             <label for="cart-item-5" class="btn btn-small btn-primary">🛒 Comprar</label>
                         </div>
                     </div>
@@ -721,7 +716,7 @@
                         <div class="card-rating">⭐⭐⭐⭐ (267)</div>
                         <div class="card-price">€55</div>
                         <div class="card-footer">
-                            <label for="fav-item-6" class="btn btn-small">❤ Favorito</label>
+                            <label for="fav-item-6" class="btn btn-small">✕ Remover</label>
                             <label for="cart-item-6" class="btn btn-small btn-primary">🛒 Comprar</label>
                         </div>
                     </div>
@@ -738,7 +733,7 @@
                         <div class="card-rating">⭐⭐⭐⭐ (312)</div>
                         <div class="card-price">€30</div>
                         <div class="card-footer">
-                            <label for="fav-item-7" class="btn btn-small">❤ Favorito</label>
+                            <label for="fav-item-7" class="btn btn-small">✕ Remover</label>
                             <label for="cart-item-7" class="btn btn-small btn-primary">🛒 Comprar</label>
                         </div>
                     </div>
@@ -755,7 +750,7 @@
                         <div class="card-rating">⭐⭐⭐⭐⭐ (89)</div>
                         <div class="card-price">€75</div>
                         <div class="card-footer">
-                            <label for="fav-item-8" class="btn btn-small">❤ Favorito</label>
+                            <label for="fav-item-8" class="btn btn-small">✕ Remover</label>
                             <label for="cart-item-8" class="btn btn-small btn-primary">🛒 Comprar</label>
                         </div>
                     </div>
@@ -763,7 +758,6 @@
             </div>
         </section>
 
-        <!-- ========== ROTEIRO ========== -->
         <section id="roteiro" class="page-section generic-section">
             <a href="#dashboard" class="btn-back">← Voltar</a>
             <h2>Meu Roteiro Personalizado</h2>
@@ -787,7 +781,6 @@
             </div>
         </section>
 
-        <!-- ========== PREFERÊNCIAS ========== -->
         <section id="preferencias" class="page-section generic-section">
             <a href="#dashboard" class="btn-back">← Voltar</a>
             <h2>Preferências</h2>
@@ -811,7 +804,6 @@
             </form>
         </section>
 
-        <!-- ========== DADOS PESSOAIS ========== -->
         <section id="dados-pessoais" class="page-section generic-section">
             <a href="#dashboard" class="btn-back">← Voltar</a>
             <h2>Dados Pessoais</h2>
@@ -861,7 +853,6 @@
             </form>
         </section>
 
-        <!-- ========== PRIVACIDADE ========== -->
         <section id="privacidade" class="page-section generic-section">
             <a href="#dashboard" class="btn-back">← Voltar</a>
             <h2>Política de Privacidade</h2>
@@ -885,7 +876,6 @@
             </form>
         </section>
 
-        <!-- ========== AJUDA ========== -->
         <section id="ajuda" class="page-section generic-section">
             <a href="#dashboard" class="btn-back">← Voltar</a>
             <h2>Ajuda e Suporte</h2>
@@ -920,7 +910,6 @@
             </div>
         </section>
 
-        <!-- ========== NOTIFICAÇÕES ========== -->
         <section id="notif-updates" class="page-section generic-section">
             <a href="#dashboard" class="btn-back">← Voltar</a>
             <h2>Atualizações</h2>
@@ -946,7 +935,6 @@
             </div>
         </section>
 
-        <!-- ========== INSPIRAÇÃO ========== -->
         <section id="inspiracao-tendencias" class="page-section generic-section">
             <a href="#dashboard" class="btn-back">← Voltar</a>
             <h2>Tendências Atuais</h2>
@@ -962,8 +950,8 @@
                         <div class="card-rating">⭐⭐⭐⭐⭐ (512)</div>
                         <div class="card-price">€55</div>
                         <div class="card-footer">
-                            <button class="btn btn-small" type="button">❤ Favorito</button>
-                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                            <label for="fav-item-5" class="btn btn-small">❤ Favorito</label>
+                            <label for="cart-item-5" class="btn btn-small btn-primary">🛒 Comprar</label>
                         </div>
                     </div>
                 </article>
@@ -978,8 +966,8 @@
                         <div class="card-rating">⭐⭐⭐⭐⭐ (89)</div>
                         <div class="card-price">€250</div>
                         <div class="card-footer">
-                            <button class="btn btn-small" type="button">❤ Favorito</button>
-                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                            <label for="fav-item-8" class="btn btn-small">❤ Favorito</label>
+                            <label for="cart-item-8" class="btn btn-small btn-primary">🛒 Comprar</label>
                         </div>
                     </div>
                 </article>
@@ -1017,8 +1005,8 @@
                         <div class="card-rating">⭐⭐⭐⭐⭐ (734)</div>
                         <div class="card-price">€50</div>
                         <div class="card-footer">
-                            <button class="btn btn-small" type="button">❤ Favorito</button>
-                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                            <label for="fav-item-2" class="btn btn-small">❤ Favorito</label>
+                            <label for="cart-item-2" class="btn btn-small btn-primary">🛒 Comprar</label>
                         </div>
                     </div>
                 </article>
@@ -1033,8 +1021,8 @@
                         <div class="card-rating">⭐⭐⭐⭐⭐ (923)</div>
                         <div class="card-price">€45</div>
                         <div class="card-footer">
-                            <button class="btn btn-small" type="button">❤ Favorito</button>
-                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                            <label for="fav-item-1" class="btn btn-small">❤ Favorito</label>
+                            <label for="cart-item-1" class="btn btn-small btn-primary">🛒 Comprar</label>
                         </div>
                     </div>
                 </article>
@@ -1093,8 +1081,8 @@
                         <div class="card-rating">⭐⭐⭐⭐⭐ (445)</div>
                         <div class="card-price">€65</div>
                         <div class="card-footer">
-                            <button class="btn btn-small" type="button">❤ Favorito</button>
-                            <button class="btn btn-small btn-primary" type="button">🛒 Comprar</button>
+                            <label for="fav-item-4" class="btn btn-small">❤ Favorito</label>
+                            <label for="cart-item-4" class="btn btn-small btn-primary">🛒 Comprar</label>
                         </div>
                     </div>
                 </article>
@@ -1275,7 +1263,6 @@
 
     </main>
 
-    <!-- Footer -->
     <footer class="main-footer" role="contentinfo">
         <div class="footer-content">
             <div class="footer-section">
@@ -1315,7 +1302,6 @@
         </div>
     </footer>
 
-    <!-- Modal Finalizar -->
     <dialog id="finalizar-modal" class="modal">
         <div class="modal-content">
             <h3>Finalizar Roteiro</h3>
@@ -1346,8 +1332,3 @@
 
 </body>
 </html>
-
-
-
-
-
